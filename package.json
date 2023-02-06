@@ -1,0 +1,23 @@
+{
+  "name": "textract-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.1",
+    "body-parser": "^1.20.1",
+    "davexmlrpc": "^0.4.26",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-formidable": "^1.2.0",
+    "formidable": "^2.1.1",
+    "nodemon": "^2.0.20",
+    "serpapi": "^1.1.0",
+    "textract": "^2.5.0"
+  }
+}

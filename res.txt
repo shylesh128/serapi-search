@@ -1,0 +1,519 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Summative Template Instructions
+All summative items should be developed in the appropriate template. All items for a given evidence statement should be delivered in a single document with the template copied as needed.
+Randomization: Please note that even though items will be set to be randomized in QuAD, the answer options should also be manually randomized in the item submission template. Pay special attention to the location of the key to avoid repetition. 
+Revision Process: Please make all revisions using track changes.
+ Template: Multiple Choice 
+Multiple Choice (MC) items should always have a single key and three distractors. 
+Questions 1-9
+ Cognitive level – 2 
+Item Meta-Data
+Item Code
+3069.1.5-14.1x.A.v1
+Evidence Statement 
+3069.1.5-14: The student will identify constraints using standard equations common to linear programming.
+Competency 
+3069.1.5: The graduate uses linear programming, inventory economic ordering optimization models, and graphical representations to make informed decisions.
+Stem 
+ A company makes three types of candy and packages them in three assortments. Assortment I contains 4 sour, 4 lemon, and 12 lime candies and sells for $9.40. Assortment II contains 12 sour, 4 lemon, and 4 lime candies and sells for $7.60. Assortment III contains 8 sour, 8 lemon, and 8 lime candies and sells for $11.00. Manufacturing costs per piece of candy are $0.20 for sour, $0.25 for lemon, and $0.30 for lime candies. The company can make 5,200 sour, 3,800 lemon, and 6,000 lime candies weekly. 
+ 
+ What will be the constraints to solve this problem with linear programming?
+Options 
+Mark key with "X"
+Option & Explanation
+A 
+a 0, b 0, c 0, 4a+12b 8c 5,200, 4a+4b+8c 3,800, 12a+4b+8c 6,000
+
+Incorrect. Review the problem statement carefully. 
+B (X)
+a 0, b 0, c 0, 4a+12b+8c 5,200, 4a+4b+8c 3,800, 12a+4b 8c 6,000
+
+Correct! These are the constraints for the given problem. 
+C
+a<0, b<0, c 0, 4a+12b+ 8c 5,200, 4a+4b+ 8c 3,800, 12a+4b+8c 6,000
+
+Incorrect. Review the problem statement carefully. 
+D
+a 0, b 0, c 0, 4a+12b+8c 5,200, 4a+4b+8c>3,800, 12a+4b+8c>6,000
+
+Incorrect. Review the problem statement carefully. 
+LR Reference
+Available Content:
+https://wgu-nx.acrobatiq.com/en-us/courseware/contents/wgu_quantanlys_nov15 
+
+Item-Specific Support:
+https://wgu-nx.acrobatiq.com/en-us/courseware/wgu_quantanlys_nov15/u5_optimization_model/m11_optimization_models/p1_optimal_solutions
+Review and Approval Dialogue
+WGU Review 1
+<date>
+
+Vendor Revision 1
+<date>
+
+WGU Review 2
+<date>
+
+Vendor Revision 2
+<date>
+
+WGU Review 3
+<date>
+
+Vendor Revision 3
+<date>
+
+Item Meta-Data
+Item Code
+3069.1.5-14.2x.A.v1
+Evidence Statement 
+3069.1.5-14: The student will identify constraints using standard equations common to linear programming.
+Competency 
+3069.1.5: The graduate uses linear programming, inventory economic ordering optimization models, and graphical representations to make informed decisions.
+Stem
+ What are the constraints for the linear programming problem with the feasible region provided in the graph? 
+Options
+Mark key with "X"
+Option & Explanation
+A 
+4x+y 40, 2x+3y 90, x, y<0
+
+Incorrect. Review the problem statement carefully. 
+B
+4x+y<40, 2x+3y 90, x, y 0
+
+Incorrect. Review the problem statement carefully. 
+C (X)
+4x+y 40, 2x+3y 90, x, y 0
+
+Correct! The graph shows that these are the inequalities associated with this problem. 
+D
+4x+y 40, 2x+3y 90, x, y< 0
+
+Incorrect. Review the problem statement carefully. 
+LR Reference
+Available Content:
+https://wgu-nx.acrobatiq.com/en-us/courseware/contents/wgu_quantanlys_nov15 
+
+Item-Specific Support:
+https://wgu-nx.acrobatiq.com/en-us/courseware/wgu_quantanlys_nov15/u5_optimization_model/m11_optimization_models/p1_optimal_solutions
+Review and Approval Dialogue
+WGU Review 1
+<date>
+
+Vendor Revision 1
+<date>
+
+WGU Review 2
+<date>
+
+Vendor Revision 2
+<date>
+
+WGU Review 3
+<date>
+
+Vendor Revision 3
+<date>
+
+Item Meta-Data
+Item Code
+3069.1.5-14.3x.A.v1
+Evidence Statement 
+3069.1.5-14: The student will identify constraints using standard equations common to linear programming.
+Competency 
+3069.1.5: The graduate uses linear programming, inventory economic ordering optimization models, and graphical representations to make informed decisions.
+Stem
+ What are the constraints for the linear programming problem with the feasible region provided in the graph? 
+Options 
+Mark key with "X"
+Option & Explanation
+A 
+x+y=30, x 20, y 12; x, y 0
+
+Incorrect. Review the problem statement carefully.
+B
+x+y 30, x 20, y=12; x, y 0
+
+Incorrect. Review the problem statement carefully.
+C
+x+y 30, x>20, y 12; x, y 0
+
+Incorrect. Review the problem statement carefully. 
+D (X)
+x+y 30, x 20, y 12; x, y 0
+
+Correct! These are constraints evident from the graph given in the question.
+LR Reference
+Available Content:
+https://wgu-nx.acrobatiq.com/en-us/courseware/contents/wgu_quantanlys_nov15 
+
+Item-Specific Support:
+https://wgu-nx.acrobatiq.com/en-us/courseware/wgu_quantanlys_nov15/u5_optimization_model/m11_optimization_models/p1_optimal_solutions
+Review and Approval Dialogue
+WGU Review 1
+<date>
+
+Vendor Revision 1
+<date>
+
+WGU Review 2
+<date>
+
+Vendor Revision 2
+<date>
+
+WGU Review 3
+<date>
+
+Vendor Revision 3
+<date>
+
+Item Meta-Data
+Item Code
+3069.1.5-14.4x.A.v1
+Evidence Statement 
+3069.1.5-14: The student will identify constraints using standard equations common to linear programming.
+Competency 
+3069.1.5: The graduate uses linear programming, inventory economic ordering optimization models, and graphical representations to make informed decisions.
+Stem
+ A calculator company produces a scientific calculator (denoted by x) and a graphing calculator (denoted by y). Long-term projections indicate an expected demand of at least 100 scientific and 80 graphing calculators each day. No more than 200 scientific and 170 graphing calculators can be made daily owing to limitations on production capacity. To satisfy a shipping contract, a total of at least 200 calculators must be shipped each day. If each scientific calculator sold results in a $2 loss, but each graphing calculator produces a $5 profit, how many calculators of each type should be made per day to maximize net profits? 
+ 
+ In this problem statement, what are the constraints needed to solve the problem using linear programming?
+Options 
+Mark key with "X"
+Option & Explanation
+A 
+100<x<20; 80<x<170; y< –x+200
+
+Incorrect. Review the problem statement carefully.
+B (X)
+100<x<20; 80<y <170; y> –x+200
+
+Correct! These are the constraints in the given problem. 
+C
+100<y<20; 80<x<170; y> –x+200
+
+Incorrect. Review the problem statement carefully.
+D
+100<x<20; 80<y<170; y>x+200
+
+Incorrect. Review the problem statement carefully.
+LR Reference
+14
+Available Content:
+https://wgu-nx.acrobatiq.com/en-us/courseware/contents/wgu_quantanlys_nov15 
+
+Item-Specific Support:
+https://wgu-nx.acrobatiq.com/en-us/courseware/wgu_quantanlys_nov15/u5_optimization_model/m11_optimization_models/p1_optimal_solutions
+Review and Approval Dialogue
+WGU Review 1
+<date>
+
+Vendor Revision 1
+<date>
+
+WGU Review 2
+<date>
+
+Vendor Revision 2
+<date>
+
+WGU Review 3
+<date>
+
+Vendor Revision 3
+<date>
+
+Item Meta-Data
+Item Code
+3069.1.5-14.5x.A.v1
+Evidence Statement 
+3069.1.5-14: The student will identify constraints using standard equations common to linear programming.
+Competency 
+3069.1.5: The graduate uses linear programming, inventory economic ordering optimization models, and graphical representations to make informed decisions.
+Stem
+ A business needs to buy filing cabinets. It is known that Cabinet x costs $10 per unit, requires six square feet of floor space, and holds eight cubic feet of files. Cabinet y costs $20 per unit, requires eight square feet of floor space, and holds twelve cubic feet of files. The business has a budget of $140 for this purchase. The office does not have room for more than 72 square feet of cabinets. How many cabinets of each model should the business buy to maximize storage volume?
+ 
+ In this problem statement, identify the constraints needed to solve the problem using linear programming.
+Options 
+Mark key with "X"
+Option & Explanation
+A 
+10x+20y>140, 6x+8y<72
+
+Incorrect. Read the problem statement carefully.
+B
+x, y>0, 10x+20y<140, 6x+8y<72
+
+Incorrect. Read the problem statement carefully.
+C (X)
+x, y 0, 10x+20y<140, 6x+8y<72
+
+Correct! These are the constraints inherent in the problem statement. 
+D
+10x+20y<140, 6x+8y<72
+
+Incorrect. Read the problem statement carefully. 
+LR Reference
+Available Content:
+https://wgu-nx.acrobatiq.com/en-us/courseware/contents/wgu_quantanlys_nov15 
+
+Item-Specific Support:
+https://wgu-nx.acrobatiq.com/en-us/courseware/wgu_quantanlys_nov15/u5_optimization_model/m11_optimization_models/p1_optimal_solutions
+Review and Approval Dialogue
+WGU Review 1
+<date>
+
+Vendor Revision 1
+<date>
+
+WGU Review 2
+<date>
+
+Vendor Revision 2
+<date>
+
+WGU Review 3
+<date>
+
+Vendor Revision 3
+<date>
+
+Item Meta-Data
+Item Code
+3069.1.5-14.6x.A.v1
+Evidence Statement 
+3069.1.5-14: The student will identify constraints using standard equations common to linear programming.
+Competency 
+3069.1.5: The graduate uses linear programming, inventory economic ordering optimization models, and graphical representations to make informed decisions.
+Stem
+ Paradigm Toys sells two types of toys, Type A and Type B. The owner pays $8 and $14 for one unit of Toy A and Toy B, respectively. One unit of Toy A yields a profit of $2, and one unit of Toy B yields a profit of $3. The owner estimates that no more than 2,000 toys will be sold every month and he does not plan to invest more than $20,000 in the inventory of these toys. How many units of each type of toys should be stocked to maximize the total monthly profit? Let x be the total number of toys of Type A, and let y be the total number of toys of Type B. 
+ 
+ In this problem statement, identify the constraints needed to solve the problem using linear programming.
+Options 
+Mark key with "X"
+Option & Explanation
+A (X)
+x+y 2,000, 8 x+14 y 20,000; x, y 0
+
+Correct! These are the constraints inherent in the problem statement.
+B
+ + > 2,000, 8 + 14 20,000; , 0
+
+Incorrect. Read the problem statement carefully.
+C 
+x+y 2,000, 8 x+14 y 20,000; x, y>0
+
+Incorrect. Read the problem statement carefully.
+D
+x+y 2,000, 8 x+14 y=20,000; x, y 0
+
+Incorrect. Read the problem statement carefully.
+LR Reference
+Available Content:
+https://wgu-nx.acrobatiq.com/en-us/courseware/contents/wgu_quantanlys_nov15 
+
+Item-Specific Support:
+https://wgu-nx.acrobatiq.com/en-us/courseware/wgu_quantanlys_nov15/u5_optimization_model/m11_optimization_models/p1_optimal_solutions
+Review and Approval Dialogue
+WGU Review 1
+<date>
+
+Vendor Revision 1
+<date>
+
+WGU Review 2
+<date>
+
+Vendor Revision 2
+<date>
+
+WGU Review 3
+<date>
+
+Vendor Revision 3
+<date>
+
+Item Meta-Data
+Item Code
+3069.1.5-14.7x.A.v1
+Evidence Statement 
+3069.1.5-14: The student will identify constraints using standard equations common to linear programming.
+Competency 
+3069.1.5: The graduate uses linear programming, inventory economic ordering optimization models, and graphical representations to make informed decisions.
+Stem
+ A company produces two types of tables, T1 and T2. It takes 2 hours to produce the parts of one unit of T1, 1 hour to assemble, and 2 hours to polish. It takes 4 hours to produce the parts of one unit of T2, 2.5 hours to assemble, and 1.5 hours to polish. Every month, 7,000 hours are available for producing the parts, 4,000 hours for assembling the parts, and 5,500 hours for polishing the tables. The profit per unit of T1 is $110. How many of each type of tables should be produced to maximize the total monthly profit? Let x be the number of tables of type T1 and y the number of tables of type T2.
+ 
+ In this problem statement, what are the constraints needed to solve the problem using linear programming?
+Options 
+Mark key with "X"
+Option & Explanation
+A 
+2x+4y 7,000; x+2.5y 4,000; 2x+1.5y 5,500; x,y<0
+
+Incorrect. Read the problem statement carefully.
+B
+2x+4y 7,000; x+2.5y 4,000; 2x+1.5y 5,500; x,y=0
+
+Incorrect. Read the problem statement carefully.
+C
+2x+4y>7,000; x+2.5y 4,000; 2x+1.5y 5,500; x,y 0
+
+Incorrect. Read the problem statement carefully.
+D (X)
+2x+4y 7,000; x+2.5y 4,000; 2x+1.5y 5,500; x,y 0
+
+Correct! These are the constraints inherent in the given problem statement.
+LR Reference
+Available Content:
+https://wgu-nx.acrobatiq.com/en-us/courseware/contents/wgu_quantanlys_nov15 
+
+Item-Specific Support:
+https://wgu-nx.acrobatiq.com/en-us/courseware/wgu_quantanlys_nov15/u5_optimization_model/m11_optimization_models/p1_optimal_solutions
+Review and Approval Dialogue
+WGU Review 1
+<date>
+
+Vendor Revision 1
+<date>
+
+WGU Review 2
+<date>
+
+Vendor Revision 2
+<date>
+
+WGU Review 3
+<date>
+
+Vendor Revision 3
+<date>
+
+Item Meta-Data
+Item Code
+3069.1.5-14.8x.A.v1
+Evidence Statement 
+3069.1.5-14: The student will identify constraints using standard equations common to linear programming.
+Competency 
+3069.1.5: The graduate uses linear programming, inventory economic ordering optimization models, and graphical representations to make informed decisions.
+Stem 
+ A farmer plans to mix two types of food to make a low-cost feed for the animals in his farm. A bag of food A costs $10 and contains 40 units of proteins, 20 units of minerals, and 10 units of vitamins. A bag of food B costs $12 and contains 30 units of proteins, 20 units of minerals, and 30 units of vitamins. How many bags of food A and B should the animals consume each day to meet the minimum daily requirements of 150 units of proteins, 90 units of minerals, and 60 units of vitamins at a minimum cost? Let x be the number of bags of food A and y the number of bags of food B.
+ 
+ In this problem statement, what are the constraints needed to solve the problem using linear programming?
+Options 
+Mark key with "X"
+Option & Explanation
+A 
+ x 0 y 0; 40x-30y 150; 20x+20y 90; 10x+30y 60
+
+Incorrect. Read the problem statement carefully.
+B (X)
+ x 0 y 0; 40x+30y 150; 20x+20y 90; 10x+30y 60
+
+Correct! These are the constraints inherent in the given problem statement.
+C
+ x 0 y 0; 40x+30y 150; 20x+20y 90; 10x+30y<60
+
+Incorrect. Read the problem statement carefully.
+D
+ x 0 y 0; 40x+30y 150; 20x-20y 90; 10x+30y 60
+
+Incorrect. Read the problem statement carefully.
+LR Reference
+Available Content:
+https://wgu-nx.acrobatiq.com/en-us/courseware/contents/wgu_quantanlys_nov15 
+
+Item-Specific Support:
+https://wgu-nx.acrobatiq.com/en-us/courseware/wgu_quantanlys_nov15/u5_optimization_model/m11_optimization_models/p1_optimal_solutions
+Review and Approval Dialogue
+WGU Review 1
+<date>
+
+Vendor Revision 1
+<date>
+
+WGU Review 2
+<date>
+
+Vendor Revision 2
+<date>
+
+WGU Review 3
+<date>
+
+Vendor Revision 3
+<date>
+
+Item Meta-Data
+Item Code
+3069.1.5-14.9x.A.v1
+Evidence Statement 
+3069.1.5-14: The student will identify constraints using standard equations common to linear programming.
+Competency 
+3069.1.5: The graduate uses linear programming, inventory economic ordering optimization models, and graphical representations to make informed decisions.
+Stem
+ Each month, a store owner can spend a maximum of $100,000 on personal computers (PCs) and laptops. A PC costs the storeowner $1,000, and a laptop costs him $1,500. Each PC is sold at a profit of 400, while each laptop is sold at a profit of $700. The store owner estimates that a minimum of 15 PCs, but no more than 80, are sold each month. He also estimates that the number of laptops sold is not more than half of the number of PCs sold. How many PCs and how many laptops should be sold to maximize profit? Let x and y be the numbers of PCs and laptops, respectively, that should be sold.
+ 
+ In this problem statement, what are the constraints needed to solve the problem using linear programming?
+Options 
+Mark key with "X"
+Option & Explanation
+A (X)
+15 x 80; y 0; y (1/2)x; 1,000x+1,500y 100,000
+
+Correct! These are the constraints inherent in the problem statement.
+B
+15 x 80; y 0; y 2x; 1,000x+1,500y 100,000
+
+Incorrect. Read the problem statement carefully.
+C 
+15 x 80; y 0; y (1/2)x; 1,000x+1,500y>100,000
+
+Incorrect. Read the problem statement carefully.
+D
+15 x 80; y 0; y (1/2)x; 1,000x-1,500y 100,000
+
+Incorrect. Read the problem statement carefully.
+LR Reference
+Available Content:
+https://wgu-nx.acrobatiq.com/en-us/courseware/contents/wgu_quantanlys_nov15 
+
+Item-Specific Support:
+https://wgu-nx.acrobatiq.com/en-us/courseware/wgu_quantanlys_nov15/u5_optimization_model/m11_optimization_models/p1_optimal_solutions
+Review and Approval Dialogue
+WGU Review 1
+<date>
+
+Vendor Revision 1
+<date>
+
+WGU Review 2
+<date>
+
+Vendor Revision 2
+<date>
+
+WGU Review 3
+<date>
+
+Vendor Revision 3
+<date>
+
+
+
