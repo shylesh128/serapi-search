@@ -4,13 +4,14 @@ const bodyParser = require("body-parser");
 const formidable = require("formidable");
 
 const fs = require("fs");
-const getSentences = require("./getQuestions");
+const mammoth = require("mammoth");
 // const contents = fs.readFileSync(
 //   "D:/textract-nodejs/uploads/3069.1.5-14 questions.docx"
 // );
 
 const app = express();
 var ejs = require("ejs");
+const getAll = require("./readRes");
 const port = 3010;
 
 app.set("view engine", "ejs");
@@ -43,7 +44,7 @@ app.post("/", (req, res) => {
     console.log(file.filepath);
   });
 
-  //Display uploaded message to console
+  // Display uploaded message to console
   form.on("file", function (name, file) {
     console.log("Uploaded file: " + file.originalFilename);
 
@@ -56,23 +57,39 @@ app.post("/", (req, res) => {
           console.log(error);
           res.status(400).send("Error");
         } else {
-          // console.log("The text from the doc is: " + text);
-          fs.writeFileSync("./res.txt", text);
-          const questions = await getSentences("./res.txt");
-          // res.send(questions);
-          console.log(questions);
-          res.render("res", {
-            title: "My Page",
-            message: "Hello World",
-            paragraphs: questions,
-          });
-          fs.writeFileSync("./both.json", JSON.stringify(questions));
+          console.log(file.filepath);
+          console.log("The text from the doc is: " + text);
+          mammoth
+            .convertToHtml({ path: file.filepath })
+            .then(async function (result) {
+              let html = result.value;
+              let messages = result.messages;
+
+              fs.writeFileSync("./res.txt", text);
+              const all = await getAll("./res.txt");
+              fs.writeFileSync("./results.json", JSON.stringify(all));
+              fs.readFile("./outputs/all.json", "utf-8", (err, data) => {
+                if (err) throw err;
+
+                const all = JSON.parse(data);
+                // Now you can use the `jsonData` as an array of objects
+                res.render("extracted", {
+                  title: "My Page",
+                  message: "Hello World",
+                  data: all,
+                  html: html,
+                });
+              });
+
+              // console.log(text);
+            })
+            .done();
         }
       }
     );
   });
 
-  //   res.send("File uploaded!");
+  // res.send("File uploaded!");
 });
 
 app.listen(port, () => {

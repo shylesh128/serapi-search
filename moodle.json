@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Code Of Conduct",
+    "description": "Welcome to the Code of Conduct Self-Learning Module! Please note that Code of Conduct Training is a mandatory part of your orientation. This means that you must go through the module thoroughly and answer all the questions within the module. Additionally, once you complete the module, you must attempt the post-assessment and score a minimum of 90 percent in order to pass the training. Learning Tip: For effective learning and retention, before beginning the module, minimize distractions and avoid multitasking. Ideally, the module must be completed in no more than 1-1.5 hours.",
+    "lessons": [
+      "Introduction to the Module",
+      "Equal Employment Opportunity",
+      "Conflict of interest",
+      "confidentiality",
+      "Solicitation and distribution",
+      "integrity",
+      "Breach of Trust",
+      "Ethical Professional Behavior",
+      "Communication Etiquette",
+      "Disciplinary Consequences",
+      "End of Module"
+    ],
+    "author": "ansrsource",
+    "outcome": "once you go through the module, complete the quiz available here. Please note that you must score a minimum of 90 percent to pass the course."
+  },
+  {
+    "name": "Prevention of Sexual Harassment (POSH)",
+    "description": "ansrsource aims to create a safe and healthy work environment for all its team members. As part of this focus, and in compliance with the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013, ansrsource has implemented the Prevention of Sexual Harassment (POSH) Policy within ansrsource. This module will take you through identifying situations of sexual harassment and the procedures to report cases of harassment at ansrsource. Go through the content (you will need headphones) and complete the quiz at the end to complete the module",
+    "lessons": "ansrsource ensures that it provides a safe, secure working environment for all team members. This course will give you an overview of our organization's POSH policy.",
+    "author": "ansrsource",
+    "outcome": "Awareness of our organization's POSH policy will help create a safe, secure working environment for all team members."
+  },
+  {
+    "name": "Plagiarism",
+    "description": "This course introduces you to the concept of plagiarism, explains its significance at ansrsource, and discusses ways to avoid it.",
+    "lessons": "ansrsource ensures that it provides a safe, secure working environment for all team members. This course will give you an overview of our organization's POSH policy.",
+    "author": "ansrsource",
+    "outcome": "You will know how to avoid plagiarizing content"
+  }
+]

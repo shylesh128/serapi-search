@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <style>
+      body {
+        background-color: whitesmoke;
+      }
+
+      .left {
+        float: left;
+        width: 50%;
+        height: 600px;
+        overflow: scroll;
+      }
+
+      .right {
+        float: right;
+        width: 50%;
+        height: 600px;
+        overflow: scroll;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .forms {
+        display: flex;
+        justify-content: center;
+      }
+
+      button {
+        display: inline-block;
+        padding: 0.35em 1.2em;
+        border-radius: 3px;
+        background-color: #0b1724;
+        color: #ffffff;
+        font-size: 16px;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0c5460;
+      }
+
+      button:active {
+        background-color: #0c5460;
+        transform: translateY(3px);
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+        margin-top: 20px;
+        padding: 20px;
+      }
+
+      .card div {
+        padding: 20px;
+      }
+
+      .card h2 {
+        color: rgb(27, 27, 41);
+      }
+      .card h3 {
+        cursor: pointer;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #333;
+        border-radius: 4px;
+        transition: background-color 0.2s ease-out;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Extracted information</h1>
+    <div class="left" id="left"><%- html %></div>
+    <div class="right" id="right">
+      <% for (var i = 0; i < data.length; i++) { %>
+      <div class="card">
+        <h2>Question ID: <%= data[i].qID %></h2>
+        <!-- <h3 id="evidence">Evidence Statement: <%= data[i].evidence %></h3> -->
+        <h3 id="question">Question: <%= data[i].q %></h3>
+        <div id="QuestionResults" class="hidden">
+          <h2>Here the are search links for questions</h2>
+          <% if (data[i].qResult) {%> <% const searchEngines = ['google',
+          'yahoo', 'bing', 'yandex']; %> <% for (const engine of searchEngines)
+          { %> <% if (data[i].qResult[engine]) { %>
+          <h3>
+            <%= engine.charAt(0).toUpperCase() + engine.slice(1) %> search
+            results:
+          </h3>
+          <% for (const result of data[i].qResult[engine]) { %>
+          <a href="<%= result.link %>"> <%= result.title %> </a><br />
+          <% } %> <% } %> <% } %> <% } %>
+        </div>
+
+        <h3 id="evidence">Evidence Statement: <%= data[i].evidence %></h3>
+        <div id="evidenceResults" class="hidden">
+          <h2>Here are the search links for the evidence statement</h2>
+          <% if (data[i].evidenceResult) {%> <% const searchEngines = ['google',
+          'yahoo', 'bing', 'yandex']; %> <% for (const engine of searchEngines)
+          { %> <% if (data[i].evidenceResult[engine]) { %>
+          <h3>
+            <%= engine.charAt(0).toUpperCase() + engine.slice(1) %> search
+            results:
+          </h3>
+          <% for (const result of data[i].evidenceResult[engine]) { %>
+          <a href="<%= result.link %>"> <%= result.title %> </a><br />
+          <% } %> <% } %> <% } %> <% } %>
+        </div>
+
+        <h3 id="competency">Competency: <%= data[i].competency %></h3>
+        <div id="competencyResults" class="hidden">
+          <h2>Here are the search links for Competency</h2>
+          <% if (data[i].competencyResult) {%> <% const searchEngines =
+          ['google', 'yahoo', 'bing', 'yandex']; %> <% for (const engine of
+          searchEngines) { %> <% if (data[i].competencyResult[engine]) { %>
+          <h3>
+            <%= engine.charAt(0).toUpperCase() + engine.slice(1) %> search
+            results:
+          </h3>
+          <% for (const result of data[i].competencyResult[engine]) { %>
+          <a href="<%= result.link %>"> <%= result.title %> </a><br />
+          <% } %> <% } %> <% } %> <% } %>
+        </div>
+
+        <h3 id="options">Options: <%= data[i].options %></h3>
+        <div id="optionsResults" class="hidden">
+          <h2>Here are the search links for Options</h2>
+          <% if (data[i].optionsResult) {%> <% const searchEngines = ['google',
+          'yahoo', 'bing', 'yandex']; %> <% for (const engine of searchEngines)
+          { %> <% if (data[i].optionsResult[engine]) { %>
+          <h3>
+            <%= engine.charAt(0).toUpperCase() + engine.slice(1) %> search
+            results:
+          </h3>
+          <% for (const result of data[i].optionsResult[engine]) { %>
+          <a href="<%= result.link %>"> <%= result.title %> </a><br />
+          <% } %> <% } %> <% } %> <% } %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>
+  <script>
+    // function searchAndScroll(searchText) {
+    //   var container = document.getElementById("right");
+    //   var children = container.getElementsByTagName("*");
+
+    //   for (var i = 0; i < children.length; i++) {
+    //     if (children[i].textContent.indexOf(searchText) !== -1) {
+    //       container.scrollTop = children[i].offsetTop;
+    //       break;
+    //     }
+    //   }
+    // }
+    function searchAndScroll(searchText) {
+      var container = document.getElementById("right");
+      var children = container.getElementsByTagName("*");
+
+      for (var i = 0; i < children.length; i++) {
+        if (children[i].textContent.indexOf(searchText) !== -1) {
+          var start = container.scrollTop;
+          var end = children[i].offsetTop;
+          var duration = 500; // duration of the animation in milliseconds
+          var currentTime = 0;
+
+          var animateScroll = setInterval(function () {
+            currentTime += 20;
+            var val = easeInOutQuad(currentTime, start, end - start, duration);
+            container.scrollTop = val;
+
+            if (currentTime >= duration) {
+              clearInterval(animateScroll);
+            }
+          }, 20);
+
+          break;
+        }
+      }
+    }
+
+    // easing function to smoothly update the scrollTop value
+    function easeInOutQuad(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    }
+    var leftDiv = document.getElementById("left");
+    leftDiv.addEventListener("mouseup", function () {
+      var selectedText = "";
+      if (typeof window.getSelection != "undefined") {
+        selectedText = window.getSelection().toString();
+      }
+      if (selectedText.trim().length > 1) {
+        searchAndScroll(selectedText);
+      }
+    });
+  </script>
+</html>
