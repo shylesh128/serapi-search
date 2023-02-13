@@ -102,9 +102,9 @@
         <h3 id="question">Question: <%= data[i].q %></h3>
         <div id="QuestionResults" class="hidden">
           <h2>Here the are search links for questions</h2>
-          <% if (data[i].qResult) {%> <% const searchEngines = ['google',
-          'yahoo', 'bing', 'yandex']; %> <% for (const engine of searchEngines)
-          { %> <% if (data[i].qResult[engine]) { %>
+          <% if (data[i].qResult) {%> <% const searchEngines =
+          ['google','yahoo', 'bing', 'yandex']; %> <% for (const engine of
+          searchEngines) { %> <% if (data[i].qResult[engine]) { %>
           <h3>
             <%= engine.charAt(0).toUpperCase() + engine.slice(1) %> search
             results:
