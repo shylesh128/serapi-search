@@ -77,9 +77,9 @@ function getOptions(array, startWord, endWord) {
   return result;
 }
 
-async function getAll(filePath) {
-  const contents = fs.readFileSync(filePath, "utf8");
-  const lines = contents.split("\n");
+async function getAll(text) {
+  // const contents = fs.readFileSync(filePath, "utf8");
+  const lines = text.split("\n");
   const array = lines.filter((string) => string.trim() !== "");
   const result = getQuestions(array, "stem", "options");
   const evidence = getEvidence(array, "evidence statement", "competency");

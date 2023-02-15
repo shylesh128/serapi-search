@@ -3,6 +3,7 @@ const { getJson } = require("serpapi");
 async function search(query) {
   const api =
     "13e3f7764283f5dce7da438eb15aadc138b42e8944dfc41107cd9778bde5464c";
+
   const googleparams = {
     q: query,
     api_key: api,

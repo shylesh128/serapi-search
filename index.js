@@ -12,6 +12,7 @@ const mammoth = require("mammoth");
 const app = express();
 var ejs = require("ejs");
 const getAll = require("./readRes");
+const sortAll = require("./sort");
 const port = 3010;
 
 app.set("view engine", "ejs");
@@ -66,20 +67,29 @@ app.post("/", (req, res) => {
               let messages = result.messages;
 
               fs.writeFileSync("./res.txt", text);
-              const all = await getAll("./res.txt");
+              const all = await getAll(text);
               fs.writeFileSync("./results.json", JSON.stringify(all));
               fs.readFile("./outputs/all.json", "utf-8", (err, data) => {
                 if (err) throw err;
 
                 const all = JSON.parse(data);
+                const sortedData = sortAll();
                 // Now you can use the `jsonData` as an array of objects
                 res.render("extracted", {
                   title: "My Page",
                   message: "Hello World",
                   data: all,
                   html: html,
+                  links: sortedData,
                 });
               });
+
+              // res.render("extracted", {
+              //   title: "My Page",
+              //   message: "Hello World",
+              //   data: all,
+              //   html: html,
+              // });
 
               // console.log(text);
             })
