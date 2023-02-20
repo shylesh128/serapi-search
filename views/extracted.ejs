@@ -71,6 +71,23 @@
       .card h3 {
         cursor: pointer;
       }
+
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
       ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
@@ -93,14 +110,16 @@
   </head>
   <body>
     <h1>Extracted information</h1>
-    <div class="left" id="left"><%- html %></div>
-    <div class="right" id="right">
+
+    <!-- <div class="left" id="left"><%- html %></div> -->
+    <div class="left" id="left">
       <% for (var i = 0; i < data.length; i++) { %>
+
       <div class="card">
         <h2>Question ID: <%= data[i].qID %></h2>
         <!-- <h3 id="evidence">Evidence Statement: <%= data[i].evidence %></h3> -->
         <h3 id="question">Question: <%= data[i].q %></h3>
-        <div id="QuestionResults" class="hidden">
+        <!-- <div id="QuestionResults" class="hidden">
           <h2>Here the are search links for questions</h2>
           <% if (data[i].qResult) {%> <% const searchEngines =
           ['google','yahoo', 'bing', 'yandex']; %> <% for (const engine of
@@ -112,10 +131,10 @@
           <% for (const result of data[i].qResult[engine]) { %>
           <a href="<%= result.link %>"> <%= result.title %> </a><br />
           <% } %> <% } %> <% } %> <% } %>
-        </div>
+        </div> -->
 
         <h3 id="evidence">Evidence Statement: <%= data[i].evidence %></h3>
-        <div id="evidenceResults" class="hidden">
+        <!-- <div id="evidenceResults" class="hidden">
           <h2>Here are the search links for the evidence statement</h2>
           <% if (data[i].evidenceResult) {%> <% const searchEngines = ['google',
           'yahoo', 'bing', 'yandex']; %> <% for (const engine of searchEngines)
@@ -127,10 +146,10 @@
           <% for (const result of data[i].evidenceResult[engine]) { %>
           <a href="<%= result.link %>"> <%= result.title %> </a><br />
           <% } %> <% } %> <% } %> <% } %>
-        </div>
+        </div> -->
 
         <h3 id="competency">Competency: <%= data[i].competency %></h3>
-        <div id="competencyResults" class="hidden">
+        <!-- <div id="competencyResults" class="hidden">
           <h2>Here are the search links for Competency</h2>
           <% if (data[i].competencyResult) {%> <% const searchEngines =
           ['google', 'yahoo', 'bing', 'yandex']; %> <% for (const engine of
@@ -142,10 +161,10 @@
           <% for (const result of data[i].competencyResult[engine]) { %>
           <a href="<%= result.link %>"> <%= result.title %> </a><br />
           <% } %> <% } %> <% } %> <% } %>
-        </div>
+        </div> -->
 
         <h3 id="options">Options: <%= data[i].options %></h3>
-        <div id="optionsResults" class="hidden">
+        <!-- <div id="optionsResults" class="hidden">
           <h2>Here are the search links for Options</h2>
           <% if (data[i].optionsResult) {%> <% const searchEngines = ['google',
           'yahoo', 'bing', 'yandex']; %> <% for (const engine of searchEngines)
@@ -157,23 +176,57 @@
           <% for (const result of data[i].optionsResult[engine]) { %>
           <a href="<%= result.link %>"> <%= result.title %> </a><br />
           <% } %> <% } %> <% } %> <% } %>
-        </div>
+        </div> -->
       </div>
       <% } %>
     </div>
+
+    <div class="right" id="right">
+      <div>
+        <% function generateLinks(title, linkObj) { %>
+        <h2><%= title %>:</h2>
+        <ul>
+          <% for (const link in linkObj) { %>
+          <li>
+            <a href="<%= link %>"><%= linkObj[link].titles[0] %></a>
+            <p><%= linkObj[link].query %></p>
+
+            <% if (linkObj[link].matchPercentages) { %>
+            <div>
+              <table>
+                <tr>
+                  <th>engine</th>
+                  <th>normal</th>
+                  <th>cosine</th>
+                  <th>jaccard</th>
+                  <th>euclidean</th>
+                  <th>pearson</th>
+                </tr>
+                <% linkObj[link].matchPercentages.forEach(function(match) { %>
+                <tr>
+                  <% for (const algorithm in match) { %>
+                  <td><%= match[algorithm] %></td>
+                  <% } %>
+                </tr>
+
+                <% }); %>
+              </table>
+            </div>
+            <% } %>
+          </li>
+          <% } %>
+        </ul>
+        <% } %>
+      </div>
+      <div>
+        <% generateLinks("Question Links", links.qLinks) %> <%
+        generateLinks("Evidence Links", links.evidenceLinks) %> <%
+        generateLinks("Options Links", links.optionsLinks) %> <%
+        generateLinks("Competency Links", links.competencyLinks) %>
+      </div>
+    </div>
   </body>
   <script>
-    // function searchAndScroll(searchText) {
-    //   var container = document.getElementById("right");
-    //   var children = container.getElementsByTagName("*");
-
-    //   for (var i = 0; i < children.length; i++) {
-    //     if (children[i].textContent.indexOf(searchText) !== -1) {
-    //       container.scrollTop = children[i].offsetTop;
-    //       break;
-    //     }
-    //   }
-    // }
     function searchAndScroll(searchText) {
       var container = document.getElementById("right");
       var children = container.getElementsByTagName("*");

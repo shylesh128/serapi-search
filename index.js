@@ -59,7 +59,7 @@ app.post("/", (req, res) => {
           res.status(400).send("Error");
         } else {
           console.log(file.filepath);
-          console.log("The text from the doc is: " + text);
+          // console.log("The text from the doc is: " + text);
           mammoth
             .convertToHtml({ path: file.filepath })
             .then(async function (result) {
@@ -73,8 +73,13 @@ app.post("/", (req, res) => {
                 if (err) throw err;
 
                 const all = JSON.parse(data);
-                const sortedData = sortAll();
-                // Now you can use the `jsonData` as an array of objects
+                const sortedData = sortAll(all);
+
+                // console.log(all);
+                // console.log(sortedData);
+                // Object.keys(sortedData).forEach(function (key) {
+                //   console.log(Object.keys[key]);
+                // });
                 res.render("extracted", {
                   title: "My Page",
                   message: "Hello World",

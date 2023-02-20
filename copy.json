@@ -1,0 +1,191 @@
+{
+  "qLinks": {
+    "https://www.chegg.com/homework-help/questions-and-answers/company-makes-three-types-candy-packages-three-assortments-assortment-contains-4-sour-4-le-q19108264": {
+      "engines": ["google"],
+      "qid": [1],
+      "snippets": [""],
+      "titles": [""],
+      "query": "",
+      "matchPercentages": [
+        {
+          "normal": 21.929824561403507,
+          "cosine": 87.18462757257815,
+          "jaccard": 39.6551724137931,
+          "euclidean": 11.357816691600547,
+          "pearson": 79.15453233626866
+        }
+      ]
+    },
+    "https://www.wyzant.com/resources/answers/120037/linear_programming_setup_help_please_much_appreciated": {
+      "engines": ["google", "yandex"],
+      "qid": [1],
+      "snippets": ["", " 3,800 lemon, and 5,400 candies weekly."],
+      "titles": [
+        "Linear Programming Setup Help Please :)",
+        "Linear Programming Setup Help... "
+      ],
+      "query": "A company makes three types of candy and packages them in three assortments. Assortment I contains 4 sour, 4 lemon, and 12 lime candies and sells for $9.40. Assortment II contains 12 sour, 4 lemon, and 4 lime candies and sells for $7.60. Assortment III contains 8 sour, 8 lemon, and 8 lime candies and sells for $11.00. Manufacturing costs per piece of candy are $0.20 for sour, $0.25 for lemon, and $0.30 for lime candies. The company can make 5,200 sour, 3,800 lemon, and 6,000 lime candies weekly. What will be the constraints to solve this problem with linear programming?",
+      "matchPercentages": [
+        {
+          "normal": 17.543859649122805,
+          "cosine": 86.26661024911036,
+          "jaccard": 33.89830508474576,
+          "euclidean": 11.045361017187261,
+          "pearson": 73.37544063842381
+        },
+        {
+          "normal": 23.62204724409449,
+          "cosine": 94.71548379643296,
+          "jaccard": 33.84615384615385,
+          "euclidean": 8.426149773176359,
+          "pearson": 91.28591804984052
+        }
+      ]
+    }
+  },
+  "evidenceLinks": {
+    "https://www.youtube.com/watch?v=wVnr1HhUCT0": {
+      "engines": ["google"],
+      "qid": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "snippets": [
+        "Make sure you watch part 1 and 2 before part 3. In this video, we go over another example on how to write the dual programming of a LP."
+      ],
+      "titles": ["Writing the Dual Programming of a Linear ... - YouTube"],
+      "query": "A company makes three types of candy and packages them in three assortments. Assortment I contains 4 sour, 4 lemon, and 12 lime candies and sells for $9.40. Assortment II contains 12 sour, 4 lemon, and 4 lime candies and sells for $7.60. Assortment III contains 8 sour, 8 lemon, and 8 lime candies and sells for $11.00. Manufacturing costs per piece of candy are $0.20 for sour, $0.25 for lemon, and $0.30 for lime candies. The company can make 5,200 sour, 3,800 lemon, and 6,000 lime candies weekly. What will be the constraints to solve this problem with linear programming?",
+      "matchPercentages": [
+        {
+          "normal": 5.303030303030303,
+          "cosine": 0,
+          "jaccard": 6.25,
+          "euclidean": 8.06225774829855,
+          "pearson": null
+        }
+      ]
+    },
+    "https://math.mit.edu/~goemans/18310S15/lpnotes310.pdf": {
+      "engines": ["google", "bing"],
+      "qid": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "snippets": [
+        "The constraints can either be inequalities (≤ or ≥) or equalities. Some variables might be unrestricted in sign (i.e. they can take positive ...",
+        "Weblinear equality and inequality constraints on the decision variables. Linear programming has many practical applications (in transportation, production planning, ...). It is also the …"
+      ],
+      "titles": [
+        "Linear programming 1 Basics",
+        "Linear programming 1 Basics - Massachusetts …"
+      ],
+      "query": "A company makes three types of candy and packages them in three assortments. Assortment I contains 4 sour, 4 lemon, and 12 lime candies and sells for $9.40. Assortment II contains 12 sour, 4 lemon, and 4 lime candies and sells for $7.60. Assortment III contains 8 sour, 8 lemon, and 8 lime candies and sells for $11.00. Manufacturing costs per piece of candy are $0.20 for sour, $0.25 for lemon, and $0.30 for lime candies. The company can make 5,200 sour, 3,800 lemon, and 6,000 lime candies weekly. What will be the constraints to solve this problem with linear programming?",
+      "matchPercentages": [
+        {
+          "normal": 3.937007874015748,
+          "cosine": 0,
+          "jaccard": 6.8493150684931505,
+          "euclidean": 1.4142135623730951,
+          "pearson": null
+        },
+        {
+          "normal": 3.90625,
+          "cosine": 0,
+          "jaccard": 3.8461538461538463,
+          "euclidean": 8.06225774829855,
+          "pearson": 25
+        }
+      ]
+    }
+  },
+  "competencyLinks": {
+    "https://www.coursehero.com/file/54613511/C723-Course-of-Study-Quantitative-Analysis-for-Business-3-CUspdf/": {
+      "engines": ["google", "yahoo", "bing"],
+      "qid": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "snippets": [
+        "This course explores various decision-makingmodels, including expected value models, linear programming models, and inventory models.You will learn to analyze ...",
+        "Jun 2, 2020 · This course explores various decision-making models, including expected value models, linear programming models, and inventory models. You will learn to analyze data by using a variety of analytic tools and techniques to make better business decisions. In addition, you will develop project schedules using the Critical Path Method.",
+        "This course explores various decision-making models, including expected value models, linear programming models, and inventory models. You will learn to …"
+      ],
+      "titles": [
+        "C723 - Course of Study - Quantitative Analysis for Business - 3 ...",
+        "C723 - Course of Study - Quantitative Analysis for Business...",
+        "C723 - Course of Study - Quantitative Analysis for …"
+      ],
+      "query": "A company makes three types of candy and packages them in three assortments. Assortment I contains 4 sour, 4 lemon, and 12 lime candies and sells for $9.40. Assortment II contains 12 sour, 4 lemon, and 4 lime candies and sells for $7.60. Assortment III contains 8 sour, 8 lemon, and 8 lime candies and sells for $11.00. Manufacturing costs per piece of candy are $0.20 for sour, $0.25 for lemon, and $0.30 for lime candies. The company can make 5,200 sour, 3,800 lemon, and 6,000 lime candies weekly. What will be the constraints to solve this problem with linear programming?",
+      "matchPercentages": [
+        {
+          "normal": 3.968253968253968,
+          "cosine": 0,
+          "jaccard": 5.555555555555555,
+          "euclidean": 8,
+          "pearson": null
+        },
+        {
+          "normal": 5.194805194805195,
+          "cosine": 0.6753012911635258,
+          "jaccard": 7.291666666666667,
+          "euclidean": 7.211102550927978,
+          "pearson": 71.6442019834618
+        },
+        {
+          "normal": 3.968253968253968,
+          "cosine": 0,
+          "jaccard": 5.555555555555555,
+          "euclidean": 8,
+          "pearson": null
+        }
+      ]
+    },
+    "https://www2.tesu.edu/graduate/gcourse.php?CourseCode=DSI-610": {
+      "engines": ["google"],
+      "qid": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "snippets": [
+        "The course introduces the role of mathematical models in decision making, then covers how to formulate basic linear programming models for decision problems ..."
+      ],
+      "titles": ["DSI-610: Optimization – Linear Programming - myEdison®"],
+      "query": "A company makes three types of candy and packages them in three assortments. Assortment I contains 4 sour, 4 lemon, and 12 lime candies and sells for $9.40. Assortment II contains 12 sour, 4 lemon, and 4 lime candies and sells for $7.60. Assortment III contains 8 sour, 8 lemon, and 8 lime candies and sells for $11.00. Manufacturing costs per piece of candy are $0.20 for sour, $0.25 for lemon, and $0.30 for lime candies. The company can make 5,200 sour, 3,800 lemon, and 6,000 lime candies weekly. What will be the constraints to solve this problem with linear programming?",
+      "matchPercentages": [
+        {
+          "normal": 6.4,
+          "cosine": 0,
+          "jaccard": 9.722222222222223,
+          "euclidean": 5.0990195135927845,
+          "pearson": null
+        }
+      ]
+    }
+  },
+  "optionsLinks": {
+    "https://www.academia.edu/8010627/Chapter_06_Solution_Manual_Kieso_IFRS": {
+      "engines": ["google"],
+      "qid": [1],
+      "snippets": [
+        "*Average unit cost is $6.89 computed as follows: 300 X $6 = $1,800 400 X $7 = 2,800 200 X $8 = 1,600 900 $6,200 $6,200 ÷ 900 = $6.89 (rounded)."
+      ],
+      "titles": ["Chapter 06_Solution Manual_Kieso_IFRS - Academia.edu"],
+      "query": "A company makes three types of candy and packages them in three assortments. Assortment I contains 4 sour, 4 lemon, and 12 lime candies and sells for $9.40. Assortment II contains 12 sour, 4 lemon, and 4 lime candies and sells for $7.60. Assortment III contains 8 sour, 8 lemon, and 8 lime candies and sells for $11.00. Manufacturing costs per piece of candy are $0.20 for sour, $0.25 for lemon, and $0.30 for lime candies. The company can make 5,200 sour, 3,800 lemon, and 6,000 lime candies weekly. What will be the constraints to solve this problem with linear programming?",
+      "matchPercentages": [
+        {
+          "normal": 3.6231884057971016,
+          "cosine": 5.311633710333026,
+          "jaccard": 0,
+          "euclidean": 0,
+          "pearson": null
+        }
+      ]
+    },
+    "https://opac.atmaluhur.ac.id/uploaded_files/temporary/DigitalCollection/OTU3MWUzMWVhMzY4YzA5Yzg1OWQ1NThkY2M4ZWYxNzk4NjVmM2YyMg==.pdf": {
+      "engines": ["google"],
+      "qid": [1],
+      "snippets": [
+        "The other choices are incorrect because (b) goods shipped on consignment to another company and ... Bank Statements 333. Reconciling the Bank Account 334 x ..."
+      ],
+      "titles": ["accounting - Online Public Access Catalog - Perpusnas RI"],
+      "query": "A company makes three types of candy and packages them in three assortments. Assortment I contains 4 sour, 4 lemon, and 12 lime candies and sells for $9.40. Assortment II contains 12 sour, 4 lemon, and 4 lime candies and sells for $7.60. Assortment III contains 8 sour, 8 lemon, and 8 lime candies and sells for $11.00. Manufacturing costs per piece of candy are $0.20 for sour, $0.25 for lemon, and $0.30 for lime candies. The company can make 5,200 sour, 3,800 lemon, and 6,000 lime candies weekly. What will be the constraints to solve this problem with linear programming?",
+      "matchPercentages": [
+        {
+          "normal": 4.6875,
+          "cosine": 1.4501084339683115,
+          "jaccard": 8,
+          "euclidean": 8.06225774829855,
+          "pearson": null
+        }
+      ]
+    }
+  }
+}

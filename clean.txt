@@ -1,0 +1,25 @@
+A company makes three types of candy and packages them into three assortments.
+Assortment I contains 4 sour, 4 lemon, and 12 lime candies and sells for $9.40.
+Assortment II contains 12 sour, 4 lemon, 4 lime candies and sells for $7.60.
+Assortment III contains 8 sour, 8 lemon, and 8 lime candies and sells for $11.00 Manufacturing costs per piece of candy are .20 for sour, .25 for lemon, and .30 for lime.
+They can make 5,000 sour, 3,800 lemon, and 5,400 candies weekly.
+How many boxes of each type should the company produce each week in order to maximize its profit?
+What is the maximum profit?
+Still looking for help?
+Get the right answer, fast.
+Get a free answer to a quick problem.
+Most questions answered within 4 hours.
+Choose an expert and meet online.
+No packages or subscriptions, pay only for the time you need.
+{"@context":"http://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Linear Programming Setup Help Please :) Much Appreciated","upvoteCount":2,"dateCreated":"2015-06-07T21:54:07.000Z","author":{"@type":"Person","name":"Nasrin M."},"answerCount":"1","text":"A company makes three types of candy and packages them into three assortments.
+Assortment I contains 4 sour, 4 lemon, and 12 lime candies and sells for $9.40.
+Assortment II contains 12 sour, 4 lemon, 4 lime candies and sells for $7.60.
+Assortment III contains 8 sour, 8 lemon, and 8 lime candies and sells for $11.00 Manufacturing costs per piece of candy are .20 for sour, .25 for lemon, and .30 for lime.
+They can make 5,000 sour, 3,800 lemon, and 5,400 candies weekly.
+How many boxes of each type should the company produce each week in order to maximize its profit?
+How much of each fuel should be product in order to maximize profit?
+Need help with something else?
+Try one of our lessons.Need help with something else?
+Try searching for a tutor.
+A link to the app was sent to your phone.Please provide a valid phone number.
+Making educational experiences better for everyone.
