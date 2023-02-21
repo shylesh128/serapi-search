@@ -11,7 +11,6 @@ function getLastIndex(length) {
 
 function scrap(link, snippet) {
   request(link, (error, response, html) => {
-    console.log(link);
     if (!error && response.statusCode == 200) {
       const $ = cheerio.load(html);
       const elements = $("div");
@@ -43,3 +42,7 @@ function scrap(link, snippet) {
 }
 
 module.exports = scrap;
+// scrap(
+//   "https://www.chegg.com/homework-help/questions-and-answers/company-makes-three-types-candy-packages-three-assortments-assortment-contains-4-sour-4-le-q19108264",
+//   "A company makes three types of candy and packages them in three assortments. Assortment I contains 4 sour, 4 lemon, and 12 lime candies, and sells for $9.40."
+// );

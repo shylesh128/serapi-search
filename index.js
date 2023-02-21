@@ -5,9 +5,6 @@ const formidable = require("formidable");
 
 const fs = require("fs");
 const mammoth = require("mammoth");
-// const contents = fs.readFileSync(
-//   "D:/textract-nodejs/uploads/3069.1.5-14 questions.docx"
-// );
 
 const app = express();
 var ejs = require("ejs");

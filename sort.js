@@ -1,13 +1,113 @@
-const fs = require("fs");
-const { URL } = require("url");
 const natural = require("natural");
-const { Stopwords } = require("natural");
-const checkerlinkExtract = require("./linkextract");
 const cosineSimilarity = require("./algo/cosine");
 const jaccardSimilarity = require("./algo/jaccard");
 const euclideanDistance = require("./algo/euclidean");
 const pearsonCorrelation = require("./algo/pearson");
-const scrap = require("./scrap");
+
+const request = require("request");
+const cheerio = require("cheerio");
+
+function getLastIndex(length) {
+  if (length > 250) {
+    return 250;
+  } else {
+    return length;
+  }
+}
+
+function scrap(link, snippet) {
+  request(link, (error, response, html) => {
+    if (!error && response.statusCode == 200) {
+      const $ = cheerio.load(html);
+      const elements = $("div");
+
+      const preview = [];
+      const snippetLength = snippet.length;
+
+      for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        const text = $(element).text().trim();
+
+        if (text.includes(snippet)) {
+          const textIndex = text.indexOf(snippet);
+          const startIndex = Math.max(textIndex - 200, 0);
+          const endIndex = Math.min(
+            textIndex + snippetLength + getLastIndex(text.length),
+            text.length
+          );
+          const previewText = text.substring(startIndex, endIndex);
+          preview.push(`...${previewText}...`);
+        }
+      }
+
+      return preview[0];
+    } else {
+      return "not found";
+    }
+  });
+}
+
+function calculateMatchPercentage(str1, query, link, engine) {
+  const tokenizer = new natural.WordTokenizer();
+  const tokens1 = tokenizer.tokenize(str1);
+  const tokens2 = tokenizer.tokenize(query);
+  const overlap = new Set(tokens1.filter((token) => tokens2.includes(token)));
+
+  const similarity =
+    overlap.size / (tokens1.length + tokens2.length - overlap.size);
+  const percenatge = Math.trunc(similarity * 100);
+
+  return {
+    engine: engine,
+    normal: percenatge,
+    cosine: Math.trunc(cosineSimilarity(str1, query)),
+    jaccard: Math.trunc(jaccardSimilarity(str1, query)),
+    euclidean: Math.trunc(euclideanDistance(str1, query)),
+    pearson: Math.trunc(pearsonCorrelation(str1, query)),
+  };
+}
+
+function addResultToLinksData(result, linksData, data, engineType) {
+  const searchEngines = Object.keys(result);
+  for (const engine of searchEngines) {
+    if (result[engine]) {
+      for (const res of result[engine]) {
+        const link = res.link;
+        if (!linksData[link]) {
+          // console.log(res.link, "link");
+          // console.log(res.snippet, "snip");
+          linksData[link] = {
+            engines: [engine],
+            qid: [data.qID],
+            snippets: [res.snippet],
+            titles: [res.title],
+            query: data.q,
+            matchPercentages: [
+              calculateMatchPercentage(res.snippet, data.q, res.link, engine),
+            ],
+            model: [scrap(res.link, res.snippet)],
+          };
+        } else {
+          if (!linksData[link].engines.includes(engine)) {
+            linksData[link].engines.push(engine);
+          }
+          if (!linksData[link].qid.includes(data.qID)) {
+            linksData[link].qid.push(data.qID);
+          }
+          if (!linksData[link].snippets.includes(res.snippet)) {
+            // linksData[link].snippets.push(res.snippet);
+            // linksData[link].matchPercentages.push(
+            //   calculateMatchPercentage(res.snippet, data.q, res.link, engine)
+            // );
+          }
+          if (!linksData[link].titles.includes(res.title)) {
+            linksData[link].titles.push(res.title);
+          }
+        }
+      }
+    }
+  }
+}
 
 function sortAll(data) {
   const linksData = {};
@@ -17,223 +117,42 @@ function sortAll(data) {
 
   for (let i = 0; i < data.length; i++) {
     if (data[i].qResult) {
-      const searchEngines = Object.keys(data[i].qResult);
-      for (const engine of searchEngines) {
-        if (data[i].qResult[engine]) {
-          for (const result of data[i].qResult[engine]) {
-            const link = result.link;
-            if (!linksData[link]) {
-              linksData[link] = {
-                engines: [engine],
-                qid: [data[i].qID],
-                snippets: [result.snippet],
-                titles: [result.title],
-                query: data[i].q,
-                model: scrap(link, [result.snippet]),
-                matchPercentages: [
-                  calculateMatchPercentage(
-                    result.snippet,
-                    data[i].q,
-                    result.link,
-                    engine
-                  ),
-                ],
-              };
-            } else {
-              if (!linksData[link].engines.includes(engine)) {
-                linksData[link].engines.push(engine);
-              }
-              if (!linksData[link].qid.includes(data[i].qID)) {
-                linksData[link].qid.push(data[i].qID);
-              }
-              if (!linksData[link].snippets.includes(result.snippet)) {
-                linksData[link].snippets.push(result.snippet);
-                linksData[link].matchPercentages.push(
-                  calculateMatchPercentage(
-                    result.snippet,
-                    data[i].q,
-                    result.link,
-                    engine
-                  )
-                );
-              }
-              if (!linksData[link].titles.includes(result.title)) {
-                linksData[link].titles.push(result.title);
-              }
-            }
-          }
-        }
-      }
+      addResultToLinksData(data[i].qResult, linksData, data[i], "qResult");
     }
     if (data[i].evidenceResult) {
-      const searchEngines = Object.keys(data[i].evidenceResult);
-      for (const engine of searchEngines) {
-        if (data[i].evidenceResult[engine]) {
-          for (const result of data[i].evidenceResult[engine]) {
-            const link = result.link;
-            if (!linksDataEvi[link]) {
-              linksDataEvi[link] = {
-                engines: [engine],
-                qid: [data[i].qID],
-                snippets: [result.snippet],
-                titles: [result.title],
-                query: data[i].q,
-                model: scrap(link, [result.snippet]),
-
-                matchPercentages: [
-                  calculateMatchPercentage(
-                    result.snippet,
-                    data[i].q,
-                    result.link,
-                    engine
-                  ),
-                ],
-              };
-            } else {
-              if (!linksDataEvi[link].engines.includes(engine)) {
-                linksDataEvi[link].engines.push(engine);
-              }
-              if (!linksDataEvi[link].qid.includes(data[i].qID)) {
-                linksDataEvi[link].qid.push(data[i].qID);
-              }
-              if (!linksDataEvi[link].snippets.includes(result.snippet)) {
-                linksDataEvi[link].snippets.push(result.snippet);
-                linksDataEvi[link].matchPercentages.push(
-                  calculateMatchPercentage(
-                    result.snippet,
-                    data[i].q,
-                    result.link,
-                    engine
-                  )
-                );
-              }
-              if (!linksDataEvi[link].titles.includes(result.title)) {
-                linksDataEvi[link].titles.push(result.title);
-              }
-            }
-          }
-        }
-      }
+      addResultToLinksData(
+        data[i].evidenceResult,
+        linksDataEvi,
+        data[i],
+        "evidenceResult"
+      );
     }
     if (data[i].competencyResult) {
-      const searchEngines = Object.keys(data[i].competencyResult);
-      for (const engine of searchEngines) {
-        if (data[i].competencyResult[engine]) {
-          for (const result of data[i].competencyResult[engine]) {
-            const link = result.link;
-            if (!linksDataCom[link]) {
-              linksDataCom[link] = {
-                engines: [engine],
-                qid: [data[i].qID],
-                snippets: [result.snippet],
-                titles: [result.title],
-                query: data[i].q,
-                model: scrap(link, [result.snippet]),
-                matchPercentages: [
-                  calculateMatchPercentage(
-                    result.snippet,
-                    data[i].q,
-                    result.link,
-                    engine
-                  ),
-                ],
-              };
-            } else {
-              if (!linksDataCom[link].engines.includes(engine)) {
-                linksDataCom[link].engines.push(engine);
-              }
-              if (!linksDataCom[link].qid.includes(data[i].qID)) {
-                linksDataCom[link].qid.push(data[i].qID);
-              }
-              if (!linksDataCom[link].snippets.includes(result.snippet)) {
-                linksDataCom[link].snippets.push(result.snippet);
-                linksDataCom[link].matchPercentages.push(
-                  calculateMatchPercentage(
-                    result.snippet,
-                    data[i].q,
-                    result.link,
-                    engine
-                  )
-                );
-              }
-              if (!linksDataCom[link].titles.includes(result.title)) {
-                linksDataCom[link].titles.push(result.title);
-              }
-            }
-          }
-        }
-      }
+      addResultToLinksData(
+        data[i].competencyResult,
+        linksDataCom,
+        data[i],
+        "competencyResult"
+      );
     }
     if (data[i].optionsResult) {
-      const searchEngines = Object.keys(data[i].optionsResult);
-      for (const engine of searchEngines) {
-        if (data[i].optionsResult[engine]) {
-          for (const result of data[i].optionsResult[engine]) {
-            const link = result.link;
-            if (!linksDataOpt[link]) {
-              linksDataOpt[link] = {
-                engines: [engine],
-                qid: [data[i].qID],
-                snippets: [result.snippet],
-                titles: [result.title],
-                query: data[i].q,
-                model: scrap(link, [result.snippet]),
-                matchPercentages: [
-                  calculateMatchPercentage(
-                    result.snippet,
-                    data[i].q,
-                    result.link,
-                    engine
-                  ),
-                ],
-              };
-            } else {
-              if (!linksDataOpt[link].engines.includes(engine)) {
-                linksDataOpt[link].engines.push(engine);
-              }
-              if (!linksDataOpt[link].qid.includes(data[i].qID)) {
-                linksDataOpt[link].qid.push(data[i].qID);
-              }
-              if (!linksDataOpt[link].snippets.includes(result.snippet)) {
-                linksDataOpt[link].snippets.push(result.snippet);
-                linksDataOpt[link].matchPercentages.push(
-                  calculateMatchPercentage(
-                    result.snippet,
-                    data[i].q,
-                    result.link,
-                    engine
-                  )
-                );
-              }
-              if (!linksDataOpt[link].titles.includes(result.title)) {
-                linksDataOpt[link].titles.push(result.title);
-              }
-            }
-          }
-        }
-      }
+      addResultToLinksData(
+        data[i].optionsResult,
+        linksDataOpt,
+        data[i],
+        "optionsResult"
+      );
     }
   }
 
-  function calculateMatchPercentage(str1, query, link, engine) {
-    const tokenizer = new natural.WordTokenizer();
-    const tokens1 = tokenizer.tokenize(str1);
-    const tokens2 = tokenizer.tokenize(query);
-    const overlap = new Set(tokens1.filter((token) => tokens2.includes(token)));
+  const data2 = {
+    qLinks: linksData,
+    evidenceLinks: linksDataEvi,
+    competencyLinks: linksDataCom,
+    optionsLinks: linksDataOpt,
+  };
 
-    const similarity =
-      overlap.size / (tokens1.length + tokens2.length - overlap.size);
-    const percenatge = Math.trunc(similarity * 100);
-
-    return {
-      engine: engine,
-      normal: percenatge,
-      cosine: Math.trunc(cosineSimilarity(str1, query)),
-      jaccard: Math.trunc(jaccardSimilarity(str1, query)),
-      euclidean: Math.trunc(euclideanDistance(str1, query)),
-      pearson: Math.trunc(pearsonCorrelation(str1, query)),
-    };
-  }
+  fs.writeFileSync("./engines.json", JSON.stringify(data2));
 
   return {
     qLinks: linksData,

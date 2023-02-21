@@ -189,7 +189,7 @@
           <% for (const link in linkObj) { %>
           <li>
             <a href="<%= link %>"><%= linkObj[link].titles[0] %></a>
-            <p><%= linkObj[link].query %></p>
+            <p><%= linkObj[link].snippets[0] %></p>
 
             <% if (linkObj[link].matchPercentages) { %>
             <div>
